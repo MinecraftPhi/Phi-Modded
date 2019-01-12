@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "vdv.cmdmod.mixin",
+  "package": "phi.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
