@@ -1,11 +1,11 @@
-package phi.mixin;
+package phi.mixin.optimization;
 
 import net.minecraft.nbt.AbstractListTag;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.command.DataCommand;
 import phi.CommandStatics;
-import phi.IListTagExtensions;
+import phi.extensions.IListTagExtensions;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

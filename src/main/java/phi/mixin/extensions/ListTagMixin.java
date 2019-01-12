@@ -1,4 +1,4 @@
-package phi.mixin;
+package phi.mixin.extensions;
 
 import java.util.function.Supplier;
 
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import net.minecraft.nbt.AbstractListTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
-import phi.IListTagExtensions;
+import phi.extensions.IListTagExtensions;
 
 @Mixin(ListTag.class)
 public abstract class ListTagMixin extends AbstractListTag<Tag> implements IListTagExtensions {

@@ -1,4 +1,4 @@
-package phi.mixin;
+package phi.mixin.optimization;
 
 import java.util.function.Supplier;
 
@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import net.minecraft.nbt.AbstractListTag;
 import net.minecraft.nbt.Tag;
 import phi.CommandStatics;
-import phi.IListTagExtensions;
+import phi.extensions.IListTagExtensions;
 
 @Mixin(targets="net/minecraft/command/arguments/NbtPathArgumentType$class_2204")
 public class WholeAbstractListPathMixin {

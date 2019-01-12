@@ -1,4 +1,4 @@
-package phi;
+package phi.extensions;
 
 import java.util.function.Supplier;
 
