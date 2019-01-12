@@ -8,13 +8,16 @@ import org.spongepowered.asm.mixin.Shadow;
 import net.minecraft.nbt.AbstractListTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
-import phi.IReplaceableListTag;
+import phi.IListTagExtensions;
 
 @Mixin(ListTag.class)
-public abstract class ListTagMixin extends AbstractListTag<Tag> implements IReplaceableListTag {
+public abstract class ListTagMixin extends AbstractListTag<Tag> implements IListTagExtensions {
 
     @Shadow
     private byte type;
+
+    @Shadow
+    private boolean canAdd(Tag tag_1) { return true; }
 
     @Override
     public void replaceAll(Supplier<Tag> supp, Callback callback) {
@@ -29,5 +32,14 @@ public abstract class ListTagMixin extends AbstractListTag<Tag> implements IRepl
             }
             callback.call(oldTag, newTag, valid);
         }
+    }
+
+    @Override
+    public boolean tryAppend(int i, Tag tag) {
+        if(canAdd(tag)) {
+            append(i, tag);
+            return true;
+        }
+        return false;
     }
 }

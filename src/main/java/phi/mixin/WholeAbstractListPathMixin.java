@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import net.minecraft.nbt.AbstractListTag;
 import net.minecraft.nbt.Tag;
 import phi.CommandStatics;
-import phi.IReplaceableListTag;
+import phi.IListTagExtensions;
 
 @Mixin(targets="net/minecraft/command/arguments/NbtPathArgumentType$class_2204")
 public class WholeAbstractListPathMixin {
@@ -30,7 +30,7 @@ public class WholeAbstractListPathMixin {
 
     @Inject(method = "method_9376", at = @At("HEAD"), cancellable = true)
     private void replaceAll(Tag tag, Supplier<Tag> tagSupplier, CallbackInfoReturnable<Integer> ci) {
-        if(!(tag instanceof IReplaceableListTag) || !(tag instanceof AbstractListTag)) return;
+        if(!(tag instanceof IListTagExtensions) || !(tag instanceof AbstractListTag)) return;
 
         AbstractListTag list = (AbstractListTag) tag;
         int size = list.size();
@@ -39,8 +39,8 @@ public class WholeAbstractListPathMixin {
             list.append(0, tagSupplier.get());
             size = 1;
         } else {
-            IReplaceableListTag replaceableList = (IReplaceableListTag)tag;
-            replaceableList.replaceAll(tagSupplier, (oldTag, newTag, wasValid) -> {
+            IListTagExtensions extendedList = (IListTagExtensions)tag;
+            extendedList.replaceAll(tagSupplier, (oldTag, newTag, wasValid) -> {
                 System.out.println(wasValid ? "valid change" : "invalid change");
                 CommandStatics.CompoundChanged = CommandStatics.CompoundChanged || !wasValid || !newTag.equals(oldTag);
             });
