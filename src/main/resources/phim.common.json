@@ -8,7 +8,8 @@
     "CompoundTagPathMixin",
     "IndexAbstractListPathMixin",
     "PredicateListPathMixin",
-    "ListTagMixin"
+    "ListTagMixin",
+    "CompoundTagMixin"
   ],
   "injectors": {
     "defaultRequire": 1
