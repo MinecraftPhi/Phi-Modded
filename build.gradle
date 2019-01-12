@@ -5,7 +5,7 @@ plugins {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-archivesBaseName = "cmdmod"
+archivesBaseName = "phim"
 version = "0.1.0"
 
 minecraft {

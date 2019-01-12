@@ -5,12 +5,12 @@
   "version": "0.1.0",
   "side": "universal",
   "initializers": [
-    "vdv.cmdmod.ExampleMod"
+    "phi.Mod"
   ],
   "requires": {
   },
   "mixins": {
-    "client": "cmdmod.client.json",
-    "common": "cmdmod.common.json"
+    "client": "phim.client.json",
+    "common": "phim.common.json"
   }
 }
