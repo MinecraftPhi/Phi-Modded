@@ -10,6 +10,7 @@ import phi.CommandStatics;
 
 @Mixin(targets="net/minecraft/command/arguments/NbtPathArgumentType$class_2206")
 public class IndexAbstractListPathMixin {
+    // This is both an optimization and a fix for MC-141814
 	@Redirect(method = "method_9376", at = @At(value = "INVOKE", target = "Lnet/minecraft/nbt/AbstractListTag;setRaw(ILnet/minecraft/nbt/Tag;)V"))
     private void setAndCheck(AbstractListTag list, int i, Tag tag) {
         System.out.println("setAndCheck");

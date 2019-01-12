@@ -19,6 +19,7 @@ public abstract class ListTagMixin extends AbstractListTag<Tag> implements IList
     @Shadow
     private boolean canAdd(Tag tag_1) { return true; }
 
+    // This method is used in the bugfix for MC-141815
     @Override
     public void replaceAll(Supplier<Tag> supp, Callback callback) {
         type = 0;

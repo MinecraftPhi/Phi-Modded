@@ -28,6 +28,7 @@ public class WholeAbstractListPathMixin {
     //     }
     // }
 
+    // This is both an optimization and a bugfix for MC-141815
     @Inject(method = "method_9376", at = @At("HEAD"), cancellable = true)
     private void replaceAll(Tag tag, Supplier<Tag> tagSupplier, CallbackInfoReturnable<Integer> ci) {
         if(!(tag instanceof IListTagExtensions) || !(tag instanceof AbstractListTag)) return;
