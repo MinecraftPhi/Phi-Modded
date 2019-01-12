@@ -1,0 +1,16 @@
+{
+  "id": "cmdmod",
+  "name": "Command Mod",
+  "description": "Command Mod",
+  "version": "0.1.0",
+  "side": "universal",
+  "initializers": [
+    "vdv.cmdmod.ExampleMod"
+  ],
+  "requires": {
+  },
+  "mixins": {
+    "client": "cmdmod.client.json",
+    "common": "cmdmod.common.json"
+  }
+}
