@@ -3,14 +3,6 @@
   "package": "phi.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "optimization.DataModifyMixin",
-    "optimization.WholeAbstractListPathMixin",
-    "optimization.CompoundTagPathMixin",
-    "optimization.IndexAbstractListPathMixin",
-    "optimization.PredicateListPathMixin",
-    "bugfix.mc_141730.PredicateListPathMixin",
-    "extensions.ListTagMixin",
-    "optimization.CompoundTagMixin"
   ],
   "injectors": {
     "defaultRequire": 1
